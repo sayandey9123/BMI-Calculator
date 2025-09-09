@@ -1,91 +1,148 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background-color: #f4f7fc;  /* Softer background color */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* More modern font */
-  color: #333;  /* Darker text for readability */
-}
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+background: linear-gradient(135deg, #141E30, #243B55);
 
-main {
+
+
+
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: #fff;
-  width: 100%;
-  max-width: 480px;  /* Slightly smaller width for better responsiveness */
-  margin: 30px auto;  /* Spacing around the main content */
-  padding: 20px;
-  border-radius: 15px;  /* Rounded corners for a modern touch */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  min-height: 100vh;
 }
 
-h1 {
-  background-color: #4f46e5;  /* Updated color for header */
-  color: #fff;
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 950px;
   width: 100%;
-  padding: 25px 15px;
-  font-size: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Header shadow */
+  padding: 20px;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.title {
+  font-size: 28px;
   margin-bottom: 20px;
 }
 
-.output {
-  padding: 12px 20px;
-  border-radius: 12px;
-  background-color: #4f46e5;
-  margin-top: 15px;
-  color: #fff;
-  font-size: 1.1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
 .input-section {
-  width: 80%;  /* Adjust width for better layout */
-  margin-top: 15px;
+  margin-bottom: 25px;
 }
 
-.input-sider {
+.slider-label {
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.input-slider {
   width: 100%;
-  margin-top: 10px;
+  height: 6px;
+  border-radius: 5px;
+  background: #ddd;
+  margin-bottom: 15px;
+}
+
+.toggle-btn, .save-btn {
+  margin-top: 12px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #f39c12;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.toggle-btn:hover, .save-btn:hover {
+  background: #d35400;
 }
 
 .output-section {
-  margin-top: 30px;
+  margin-top: 15px;
+  background: rgba(255,255,255,0.2);
+  padding: 18px;
+  border-radius: 15px;
+  border: 2px solid;
 }
 
-button {
-  background-color: #4f46e5;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
+.output-text {
+  font-size: 16px;
 }
 
-button:hover {
-  background-color: #3730a3;
-  transform: translateY(-2px);
+.output-value {
+  font-size: 38px;
+  font-weight: bold;
 }
 
-input, textarea {
-  padding: 12px;
-  width: 100%;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  font-size: 1rem;
+.output-category {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4); /* dark glass behind text */
+}
+
+
+.saved-msg {
   margin-top: 10px;
-  transition: border-color 0.3s ease;
+  font-size: 14px;
+  color: #2ecc71;
+  animation: fadeOut 2s forwards;
 }
 
-input:focus, textarea:focus {
-  border-color: #4f46e5;
-  outline: none;
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Right Panel Animations */
+.suggestion-card {
+  animation: slideIn 0.8s ease-in-out;
+  text-align: left;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.suggestion-card h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.suggestion-card h3 {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.suggestion-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.suggestion-card li {
+  background: rgba(255,255,255,0.1);
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.suggestion-card li:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.25);
 }
